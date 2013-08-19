@@ -1,0 +1,36 @@
+#
+# system.prop for sailboat
+
+# RIL
+rild.libpath=/system/lib/libril-qc-1.so
+rild.libargs=-d /dev/smd0
+ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock
+ro.telephony.call_ring.multiple=false
+ro.telephony.call_ring.delay=3000
+
+# WiFi
+wifi.interface=wlan0
+wifi.supplicant_scan_interval=15
+
+# Graphics
+debug.sf.hw=1
+debug.composition.type=mdp
+ro.sf.lcd_density=160
+qemu.sf.lcd_density=160
+debug.gr.numframebuffers=3
+
+# USB Mass Storage
+persist.sys.usb.config=mass_storage,adb
+persist.service.adb.enable=1
+# Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
+ro.vold.umsdirtyratio=20
+
+# Dalviks
+dalvik.vm.dexopt-data-only=1
+dalvik.vm.execution-mode=int:jit
+dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
+dalvik.vm.checkjni=0
+dalvik.vm-heapsize=32m
+
+# zRam
+ro.zram.default=0
